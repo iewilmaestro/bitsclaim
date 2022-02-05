@@ -31,7 +31,6 @@ while(true){
 	if($time){tmr($time);}
 	if($msg=="no_autoclaims"){echo col('insufficient BITS Balance','m')."\n";goto menu;}
 	$ss = api();
-	print_r($ss);
 	Credit();
 }
 function head(){$user=Save("User_Agent");$cookie=Save("Cookie");$ua=["user-agent: ".$user,"cookie: ".$cookie]return $ua;}
