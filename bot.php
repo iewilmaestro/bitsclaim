@@ -33,7 +33,7 @@ while(true){
 	$ss = api();
 	Credit();
 }
-function head(){$user=Save("User_Agent");$cookie=Save("Cookie");$ua=["user-agent: ".$user,"cookie: ".$cookie]return $ua;}
+function head(){$user=Save("User_Agent");$cookie=Save("Cookie");$ua=["user-agent: ".$user,"cookie: ".$cookie];return $ua;}
 function host(){return "https://bitsclaim.com";}
 function auto(){$url = host().'/dashboard/claim/auto/start';return Run($url,head());}
 function api(){$url = host().'/dashboard/claim/auto/api';return json_decode(Run($url,head()),1);}
