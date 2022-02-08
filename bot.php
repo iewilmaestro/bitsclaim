@@ -6,7 +6,6 @@ $reg = "https://bit.ly/3smrhzI";
 $yt = "https://youtube.com/c/iewil";
 $server = "https://pastebin.com/raw/JGzBgSKe";
 $disable = col("Script mati karena web update / scam!","m")."\nSupport Channel saya dengan cara\nSubscribe ".col("https://www.youtube.com/c/iewil","k")."\nkarena subscribe itu gratis :D\nUntuk mendapatkan info Script terbaru\nJoin grub via telegram ~> ".col("https://t.me/Iewil_G","c")."\nðŸ‡®ðŸ‡© ".col("Family-Team-Function-INDO","b")."\n";Short();bn();
-
 cookie:
 Save('Cookie');Save('User_Agent');
 system("termux-open-url ".$yt);
@@ -16,7 +15,6 @@ $user=explode('</p>',explode('<p class="username">',$r)[1])[0];
 $energy=explode('<span>',explode('<p class="amount">',$r)[1])[0];
 echo col("Username ~> ",'h').col($user,'k')."\n";
 echo col("Energy ~> ",'h').col($energy,'k')."\n";line();
-
 menu:
 echo col("1 >","m")." AutoFaucet\n";
 echo col("2 >","m")." Update Cookie\n";
@@ -24,15 +22,8 @@ $pil=readline(col("Input Number ","h").col("> ","m"));line();
 if($pil==1){goto faucet;
 }elseif($pil==2){unlink($a[1]."/Cookie");goto cookie;
 }else{echo col("Bad Number\n","m")."\n";line();goto menu;}
-
 faucet:
-while(true){
-	auto();$api = api();$time = $api["seconds"];$msg = $api["message"];auto();
-	if($time){tmr($time);}
-	if($msg=="no_autoclaims"){echo col('insufficient BITS Balance','m')."\n";goto menu;}
-	$ss = api();
-	Credit();
-}
+while(true){auto();$api = api();$time = $api["seconds"];$msg = $api["message"];auto();if($time){tmr($time);}if($msg=="no_autoclaims"){echo col('insufficient BITS Balance','m')."\n";goto menu;}api();Credit();}
 function head(){$user=Save("User_Agent");$cookie=Save("Cookie");$ua=["user-agent: ".$user,"cookie: ".$cookie];return $ua;}
 function host(){return "https://bitsclaim.com";}
 function auto(){$url = host().'/dashboard/claim/auto/start';return Run($url,head());}
